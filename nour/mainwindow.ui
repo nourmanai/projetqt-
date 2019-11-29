@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1086</width>
+    <height>706</height>
+   </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidge">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>641</width>
+      <height>401</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="documentMode">
+     <bool>true</bool>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>true</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="tab_gerer_depense">
+     <attribute name="title">
+      <string>gerer depense </string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>521</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="acceptDrops">
+       <bool>true</bool>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="tab_ajout_depense">
+       <attribute name="title">
+        <string>ajouter depense</string>
+       </attribute>
+       <widget class="QLabel" name="label_taux_tva_2">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>120</y>
+          <width>52</width>
+          <height>87</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>taux TVA</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ajout_depense">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>250</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ajouter</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>130</y>
+          <width>131</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="_2">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <widget class="QLineEdit" name="taux_tva_2"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>110</y>
+          <width>372</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_type_depense_2">
+           <property name="text">
+            <string>type de depense </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLineEdit" name="lineEdit_type_dep"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>achat ou bien salaire</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>190</y>
+          <width>188</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_somme_2">
+           <property name="text">
+            <string>somme</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="somme_2"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>60</y>
+          <width>208</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_id_depense_2">
+           <property name="text">
+            <string>id depense</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="id_depense_2"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_affich_depense">
+       <attribute name="title">
+        <string>afficher depense</string>
+       </attribute>
+       <widget class="QTableView" name="tableView_affich_depense">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>541</width>
+          <height>351</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_supp_depense">
+       <attribute name="title">
+        <string>supprimer depense</string>
+       </attribute>
+       <widget class="QLabel" name="donner_id_depense">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>60</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>donner id depense</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdi_donner_id_depense">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>60</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_supprimer_depense">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>130</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>supprimer </string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_modif_depense">
+       <attribute name="title">
+        <string>modifier depense</string>
+       </attribute>
+       <widget class="QLineEdit" name="taux_tva_3">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>120</y>
+          <width>129</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="somme_3">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>160</y>
+          <width>137</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_4">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>80</y>
+          <width>119</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>achat ou bien salaire</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="id_depense_3">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>40</y>
+          <width>137</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_somme_3">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>170</y>
+          <width>42</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>somme</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_type_dep_2">
+        <property name="geometry">
+         <rect>
+          <x>110</x>
+          <y>80</y>
+          <width>137</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_taux_tva_3">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>90</y>
+          <width>52</width>
+          <height>87</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>taux TVA</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_id_depense_3">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>40</y>
+          <width>62</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>id depense</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_type_depense_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>98</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>type de depense </string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_modif_dep">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>230</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>modifier</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_gerer_salaire">
+     <attribute name="title">
+      <string>gerer salaire</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>501</width>
+        <height>321</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="toolTipDuration">
+       <number>0</number>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_ajout_salaire">
+       <attribute name="title">
+        <string>ajouter salaire </string>
+       </attribute>
+       <widget class="QLabel" name="label_id_salaire">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>30</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>id salaire</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_date_versement">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>70</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>date de versement</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_date_modif">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>100</y>
+          <width>181</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>date de derniere modification </string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_id_salaire">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>30</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ajout_salaire">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>200</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ajouter</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_montant">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>140</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>montant</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_montant">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>140</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEdit_versement">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>70</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEdit_modif">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>100</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_9">
+        <property name="geometry">
+         <rect>
+          <x>74</x>
+          <y>170</y>
+          <width>101</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>nom_personnel</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_nom_perso">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>170</y>
+          <width>151</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_ajout_salaire">
+       <attribute name="title">
+        <string>afficher salaire</string>
+       </attribute>
+       <widget class="QTableView" name="tableView_salaire">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>491</width>
+          <height>191</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_trier">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>200</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>trier</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_supp_salaire">
+       <attribute name="title">
+        <string>supprimer salaire</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButton_supp_salaire">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>90</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>supprimer</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>30</y>
+          <width>271</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_12">
+         <item>
+          <widget class="QLabel" name="label_supp_salaire">
+           <property name="text">
+            <string>id salaire à supprimer</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineEdit"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_modif_salaire">
+       <attribute name="title">
+        <string>modifier_salaire</string>
+       </attribute>
+       <widget class="QLabel" name="label_date_versement_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>70</y>
+          <width>111</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>date de versement</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_montant_2">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>140</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_id_salaire_2">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>30</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_montant_2">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>140</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>montant</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_id_salaire_2">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>30</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>id salaire</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_date_modif_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>100</y>
+          <width>181</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>date de derniere modification </string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>170</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ajouter sanction</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_sanc">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>170</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_promo">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>200</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>200</y>
+          <width>111</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ajouter promotion</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_modif_sal">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>230</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>modifier</string>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEdit_vers2">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>70</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QDateEdit" name="dateEdit_modif2">
+        <property name="geometry">
+         <rect>
+          <x>200</x>
+          <y>100</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_recherche_salaire">
+       <attribute name="title">
+        <string>recherche salaire</string>
+       </attribute>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>nom personnel</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_cherch">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>20</y>
+          <width>171</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tableView_recher">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>431</width>
+          <height>221</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_gerer_revenu">
+     <attribute name="title">
+      <string>gerer revenu </string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>531</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="QWidget" name="tab_ajout_revenu">
+       <attribute name="title">
+        <string>ajouter revenu</string>
+       </attribute>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>200</y>
+          <width>55</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_ajouter_revenu">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>220</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>ajouter</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>20</y>
+          <width>226</width>
+          <height>170</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>12</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_11">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>id_revenu</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_id_revenu"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_10">
+           <item>
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>type_revenu</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_type_revenu"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_9">
+           <item>
+            <widget class="QLabel" name="label_facture">
+             <property name="text">
+              <string>prix facturé</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_facture"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_achat">
+             <property name="text">
+              <string>prix d'achat</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_achat"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_affich_revenu">
+       <attribute name="title">
+        <string>afficher_revenu</string>
+       </attribute>
+       <widget class="QTableView" name="tableView_affich_revenu">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>441</width>
+          <height>251</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_supp_revenu">
+       <attribute name="title">
+        <string>supprimer revenu </string>
+       </attribute>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>40</y>
+          <width>111</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>donner id revenu </string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="lineEdit_9">
+        <property name="geometry">
+         <rect>
+          <x>180</x>
+          <y>40</y>
+          <width>171</width>
+          <height>22</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton_supp_revenu">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>100</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>supprimer</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_modif_revenu">
+       <attribute name="title">
+        <string>modifier revenu</string>
+       </attribute>
+       <widget class="QWidget" name="layoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>20</y>
+          <width>226</width>
+          <height>170</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>12</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <item>
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>id_revenu</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_id_revenu_2"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_14">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>type_revenu</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_type_revenu_2"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_15">
+           <item>
+            <widget class="QLabel" name="label_facture_2">
+             <property name="text">
+              <string>prix facturé</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_facture_2"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_16">
+           <item>
+            <widget class="QLabel" name="label_achat_2">
+             <property name="text">
+              <string>prix d'achat</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_achat_2"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="pushButton_modif_revenu">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>230</y>
+          <width>93</width>
+          <height>28</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>modifier</string>
+        </property>
+        <property name="autoDefault">
+         <bool>true</bool>
+        </property>
+        <property name="default">
+         <bool>false</bool>
+        </property>
+        <property name="flat">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_gerer_bilan">
+     <attribute name="title">
+      <string>gerer bilan</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>591</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab_bilan_annuel">
+       <attribute name="title">
+        <string>afficher bilan annuel</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>afficher bilan mensuel </string>
+       </attribute>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="login">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>90</y>
+      <width>341</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>welcome</string>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>160</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>LOGIN</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>70</y>
+       <width>233</width>
+       <height>57</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_id">
+          <property name="text">
+           <string>ID:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_id"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_mdp">
+          <property name="text">
+           <string>Mot de passe :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineEdit_mdp"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1086</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuNext_destination">
+    <property name="title">
+     <string>Next destination</string>
+    </property>
+   </widget>
+   <addaction name="menuNext_destination"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
