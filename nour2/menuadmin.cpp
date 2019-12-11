@@ -3,9 +3,13 @@
 #include <QMessageBox>
 #include <QSqlQuery>
 #include <QPixmap>
+#include <QDesktopServices>
 #include "depenses.h"
 #include "salaire.h"
 #include "revenu.h"
+#include "arduino.h"
+#include "mail.h"
+
 menuadmin::menuadmin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::menuadmin)
@@ -17,6 +21,16 @@ menuadmin::menuadmin(QWidget *parent) :
     ui->tableView_modif_sal ->setModel(sal.tri_affiche());
     ui-> tableView_modif_dep ->setModel(dep.tri_depense());
     ui->tableView_modif_rev->setModel(rev.tri_revenu());
+    int ret=A.connect_arduino(); // lancer la connexion à arduino
+    switch(ret){
+    case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+        break;
+    case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+       break;
+    case(-1):qDebug() << "arduino is not available";
+    }
+     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+     //le slot update_label suite à la reception du signal readyRead (reception des données).
 
 
 }
@@ -409,10 +423,38 @@ void menuadmin::on_pushButton_supp_sal_clicked()
          QMessageBox::information(nullptr, QObject::tr("Supprimer un salaire"),
                      QObject::tr("salaire supprimé.\n"
                                  "Click Cancel to exit."), QMessageBox::Cancel);
+         QString okd="";
+                            mail ok;
+                              ok.notification_sup_produit(okd);
 
      }
      else
          QMessageBox::critical(nullptr, QObject::tr("Supprimer un salaire"),
                      QObject::tr("Erreur !.\n"
                                  "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+
+void menuadmin::on_envoyer_clicked()
+{
+    QString link="https://mail.google.com/mail/u/0/#inbox";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
+void menuadmin::on_retour_clicked()
+{
+    QString link="https://www.facebook.com/";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
+void menuadmin::on_pushButton_clicked()
+{
+    QString link ="https://www.instagram.com/";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
+void menuadmin::on_pushButton_2_clicked()
+{
+    QString link="https://www.linkedin.com/";
+    QDesktopServices::openUrl(QUrl(link));
 }

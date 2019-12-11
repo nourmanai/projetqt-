@@ -6,7 +6,7 @@
 #include "depenses.h"
 #include "revenu.h"
 #include "salaire.h"
-
+#include "arduino.h"
 
 
 namespace Ui {
@@ -58,11 +58,22 @@ private slots:
 
     void on_pushButton_supp_sal_clicked();
 
+    void on_envoyer_clicked();
+
+    void on_retour_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::menuadmin *ui;
     Depenses dep;
     Revenu rev;
     Salaire sal;
+    QByteArray data; // variable contenant les données reçues
+
+    arduino A; // objet temporaire
 
 };
 

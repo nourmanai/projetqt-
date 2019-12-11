@@ -12,6 +12,10 @@ QString arduino::getarduino_port_name()
 {
     return arduino_port_name;
 }
+QSerialPort *arduino::getserial()
+{
+   return serial;
+}
 int arduino::connect_arduino()
 {   // recherche du port sur lequel la carte arduino identifée par  arduino_uno_vendor_id
     // est connectée

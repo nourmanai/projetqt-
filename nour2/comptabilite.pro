@@ -1,5 +1,7 @@
 QT       += core gui sql
 QT       +=sql
+
+QT       += core gui  serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -20,6 +22,7 @@ SOURCES += \
     bilan.cpp \
     connexion.cpp \
     depenses.cpp \
+    mail.cpp \
     main.cpp \
     mainwindow.cpp \
     menuadmin.cpp \
@@ -31,6 +34,7 @@ HEADERS += \
     bilan.h \
     connexion.h \
     depenses.h \
+    mail.h \
     mainwindow.h \
     menuadmin.h \
     revenu.h \
@@ -44,3 +48,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resource.qrc

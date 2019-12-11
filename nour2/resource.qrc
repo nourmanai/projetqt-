@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>add.png</file>
+        <file>ajout.png</file>
+        <file>cherche2.png</file>
+        <file>fb.png</file>
+        <file>insta.png</file>
+        <file>linked.png</file>
+        <file>login.png</file>
+        <file>login2.png</file>
+        <file>logo.png</file>
+        <file>logout.png</file>
+        <file>mail.png</file>
+        <file>modif.png</file>
+        <file>MODIF2.png</file>
+        <file>start.png</file>
+        <file>supp2.png</file>
+    </qresource>
+</RCC>
