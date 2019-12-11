@@ -21,6 +21,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     arduino.cpp \
+    billet.cpp \
+    client.cpp \
     connection.cpp \
     depenses.cpp \
     main.cpp \
@@ -29,11 +31,15 @@ SOURCES += \
     menu_agent.cpp \
     menu_com.cpp \
     notif.cpp \
+    reservation.cpp \
     revenu.cpp \
-    salaire.cpp
+    salaire.cpp \
+    transport.cpp
 
 HEADERS += \
     arduino.h \
+    billet.h \
+    client.h \
     connection.h \
     depenses.h \
     mainwindow.h \
@@ -41,8 +47,10 @@ HEADERS += \
     menu_agent.h \
     menu_com.h \
     notif.h \
+    reservation.h \
     revenu.h \
-    salaire.h
+    salaire.h \
+    transport.h
 
 FORMS += \
     mainwindow.ui \
@@ -54,3 +62,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    resource.qrc

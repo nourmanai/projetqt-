@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/new">
+        <file>ajout.png</file>
+        <file>login.png</file>
+        <file>logo.png</file>
+        <file>modif.png</file>
+        <file>rech.png</file>
+        <file>start.png</file>
+        <file>add.png</file>
+        <file>cherche2.png</file>
+        <file>login2.png</file>
+        <file>logout.png</file>
+        <file>supp2.png</file>
+        <file>MODIF2.png</file>
+        <file>fb.png</file>
+        <file>insta.png</file>
+        <file>linked.png</file>
+        <file>mail.png</file>
+    </qresource>
+</RCC>

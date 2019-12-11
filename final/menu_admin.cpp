@@ -120,6 +120,9 @@ void menu_admin::on_pushButton_ajout_sal_clicked()
   QMessageBox::information(nullptr, QObject::tr("Ajouter un salaire "),
                     QObject::tr("salaire ajouté.\n"
                                "Click Cancel to exit."), QMessageBox::Cancel);
+  QString okd="";
+                       notif ok;
+                       ok.notification_Ouverture(okd);
 
   }
     else
@@ -254,6 +257,9 @@ void menu_admin::on_pushButton_supp_dep_clicked()
          QMessageBox::information(nullptr, QObject::tr("Supprimer une depense"),
                      QObject::tr("depense supprimé.\n"
                                  "Click Cancel to exit."), QMessageBox::Cancel);
+         QString okd="";
+                              notif ok;
+                              ok.notification_sup_produit(okd);
 
      }
      else
@@ -325,6 +331,9 @@ void menu_admin::on_pushButton_supp_rev_clicked()
          QMessageBox::information(nullptr, QObject::tr("Supprimer un revenu"),
                      QObject::tr("revenu supprimé.\n"
                                  "Click Cancel to exit."), QMessageBox::Cancel);
+         QString okd="";
+                              notif ok;
+                              ok.notification_sup_produit(okd);
 
      }
      else
@@ -371,7 +380,7 @@ void menu_admin::on_pushButton_modif_sal_clicked()
       q.bindValue(":MONTANT_SALAIRE",ui->lineEdit_montant_sal->text());
       q.bindValue(":SANCTION",ui->lineEdit_modif_sanc->text());
       q.bindValue(":PROMOTION",ui->lineEdit_modif_promo->text());
-        q.bindValue(":NOM_PERSONNEL",ui->lineEdit_cherch_perso->text());
+        q.bindValue(":NOM_PERSONNEL",ui->lineEdit_modif_perso->text());
 
 
       //MONTANT_SALAIRE=:montant_salaire,
@@ -419,23 +428,23 @@ void menu_admin::on_pushButton_supp_sal_clicked()
 void menu_admin::on_pushButton_mail_clicked()
 {
     QString link="https://mail.google.com/mail/u/0/#inbox";
-    QDesktopServices::openUrl(QUrl(link));
+   // QDesktopServices::openUrl(QUrl(link));
 }
 
 void menu_admin::on_pushButton_fb2_clicked()
 {
     QString link="https://www.facebook.com/";
-    QDesktopServices::openUrl(QUrl(link));
+    //QDesktopServices::openUrl(QUrl(link));
 }
 
 void menu_admin::on_pushButton_insta2_clicked()
 {
     QString link="https://www.instagram.com/";
-    QDesktopServices::openUrl(QUrl(link));
+   // QDesktopServices::openUrl(QUrl(link));
 }
 
 void menu_admin::on_pushButton_lkn2_clicked()
 {
     QString link="https://www.linkedin.com/";
-    QDesktopServices::openUrl(QUrl(link));
+   // QDesktopServices::openUrl(QUrl(link));
 }
