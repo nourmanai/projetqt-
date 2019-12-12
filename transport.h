@@ -19,6 +19,7 @@ public:
     int get_numchauffeure();
     bool ajoutercTransport();
    QSqlQueryModel * afficher_Transport();
+   QSqlQueryModel *getAllTransport();
    bool supprimer_Transport(int idd);
    bool modifier (Transport T);
    QSqlQueryModel *tri();

@@ -122,21 +122,21 @@ return model;
 }
 
 
-QSqlQueryModel *client::recherchernomclient(QString nomc)
+QSqlQueryModel *client::recherchernomclient(int id)
 
 {
 
-
 QSqlQueryModel * model= new QSqlQueryModel();
+  QString res= QString::number(id);
 
-model->setQuery("select * from CLIENT where NOM like '"+nomc+"' ");
+model->setQuery("select * from CLIENT where ID  ='"+res+"' ");
 model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom "));
-model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prénom"));
-model->setHeaderData(4, Qt::Horizontal, QObject::tr("Adress"));
- model->setHeaderData(3, Qt::Horizontal, QObject::tr("Email"));
- model->setHeaderData(4, Qt::Horizontal, QObject::tr("Tel"));
- model->setHeaderData(4, Qt::Horizontal, QObject::tr("Idreserv"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM "));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("ADRESSE"));
+ model->setHeaderData(3, Qt::Horizontal, QObject::tr("EMAIL"));
+ model->setHeaderData(4, Qt::Horizontal, QObject::tr("TEL"));
+ model->setHeaderData(4, Qt::Horizontal, QObject::tr("IDRESERV"));
 
 return model;
 }

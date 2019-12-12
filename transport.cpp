@@ -43,12 +43,14 @@ Connexion c;
 c.ouvrirConnexion();
 
 QSqlQuery query;
-QString res= QString::number(id2);
+//QString res= QString::number(id2);
+//QString res1=QString::number(numtaxi);
+//QString res2=QString::number(numchauffeure);
 
 
-query.prepare("INSERT INTO Transport (ID2,POINTDEPART ,POINTARRIV ,DATEDEPART,HEUREDEPART,NUMTAXI,NUMCHAUFFEURE) "
+query.prepare("INSERT INTO transport (ID2,POINTDEPART ,POINTARRIV ,DATEDEPART,HEUREDEPART,NUMTAXI,NUMCHAUFFEURE) "
                     "VALUES (:id2, :pointdepart, :pointarriv, :datedepart, :heuredepart, :numtaxi, :numchauffeure)");
-query.bindValue("id2", res);
+query.bindValue(":id2", id2);
 query.bindValue(":pointdepart",pointdepart);
 query.bindValue(":pointarriv", pointarriv);
 query.bindValue(":datedepart", datedepart);
@@ -74,13 +76,18 @@ model->setHeaderData(6, Qt::Horizontal, QObject::tr("NUMCHAUFFEURE"));
     return model;
 }
 
-
+QSqlQueryModel *Transport::getAllTransport()
+{
+    QSqlQueryModel *model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM Transport");
+    return model;
+}
 bool Transport::supprimer_Transport(int idd)
 {
 QSqlQuery query;
 QString res= QString::number(idd);
 query.prepare("Delete from Transport where ID2 = :id2 ");
-query.bindValue(":id2", res);
+query.bindValue(":id2",res);
 return    query.exec();
 }
 
@@ -104,15 +111,16 @@ bool Transport::modifier(Transport T)
 QSqlQueryModel * Transport::tri()
 {
 QSqlQueryModel * model = new QSqlQueryModel();
-model->setQuery("select * from transport     order by ID asc");
-model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
-model->setHeaderData(1, Qt::Horizontal, QObject::tr("Nom"));
-model->setHeaderData(2, Qt::Horizontal, QObject::tr("Prenom"));
-model->setHeaderData(3, Qt::Horizontal, QObject::tr("Adresse"));
-model->setHeaderData(4, Qt::Horizontal, QObject::tr("Email"));
-model->setHeaderData(5, Qt::Horizontal, QObject::tr("Tel"));
-model->setHeaderData(6, Qt::Horizontal, QObject::tr("Idreserv"));
-return model;
+model->setQuery("select * from transport     order by ID2 ");
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID2"));
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("POINTDEPART"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("POINTARRIV"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("DATEDEPART"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("HEUREDEPART"));
+model->setHeaderData(5, Qt::Horizontal, QObject::tr("NUMTAXI"));
+model->setHeaderData(6, Qt::Horizontal, QObject::tr("NUMCHAUFFEURE"));
+    return model;
+
 }
 
 
@@ -123,15 +131,15 @@ QSqlQueryModel *Transport::rechercherid2(int id2)
 QSqlQueryModel * model= new QSqlQueryModel();
 QSqlQuery query ;
 QString res=QString::number(id2) ;
-query.prepare("select * from TABTRANSPORT where ID2=:ID2 ");
+query.prepare("select * from TRANSPORT where ID2  ='"+res+"' ");
 query.bindValue(":ID2",res) ;
 model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID2"));
 model->setHeaderData(1, Qt::Horizontal, QObject::tr("pointdepart "));
 model->setHeaderData(2, Qt::Horizontal, QObject::tr("pointarriv"));
-model->setHeaderData(4, Qt::Horizontal, QObject::tr("datedepart"));
- model->setHeaderData(3, Qt::Horizontal, QObject::tr("heuredepart"));
- model->setHeaderData(4, Qt::Horizontal, QObject::tr("numtaxi"));
- model->setHeaderData(4, Qt::Horizontal, QObject::tr("numchauffeure"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("datedepart"));
+ model->setHeaderData(4, Qt::Horizontal, QObject::tr("heuredepart"));
+ model->setHeaderData(5, Qt::Horizontal, QObject::tr("numtaxi"));
+ model->setHeaderData(6, Qt::Horizontal, QObject::tr("numchauffeure"));
 
 return model;
 }
