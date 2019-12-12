@@ -8,6 +8,7 @@
 #include "client.h"
 #include "reservation.h"
 #include "transport.h"
+#include "arduino.h"
 
 
 namespace Ui {
@@ -22,6 +23,7 @@ public:
     explicit menu_agent(QWidget *parent = nullptr);
     ~menu_agent();
     void shootscreen();
+    void update_label();
 
 private slots:
     void on_pb_ajouter_clicked();
@@ -81,6 +83,8 @@ private:
         client c;
           Transport T;
            client cl;
+           arduino A;
+            QByteArray data;
 
 };
 

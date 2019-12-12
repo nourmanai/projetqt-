@@ -1,6 +1,7 @@
 #include "menu_agent.h"
 #include "ui_menu_agent.h"
 #include "reservation.h"
+#include "arduino.h"
 #include <QMessageBox>
 #include <QFrame>
 #include <QPushButton>
@@ -110,6 +111,11 @@ void menu_agent::on_pb_supprimer_clicked()
     else
         QMessageBox::critical(nullptr, QObject::tr("Supprimer un reservation"),QObject::tr("Erreur !.\n""Click Cancel to exit."), QMessageBox::Cancel);
 }
+void menu_agent::update_label()
+{
+    data=A.read_from_arduino();
+
+}
 
 void menu_agent::on_mise_a_jour_clicked()
 {
@@ -137,11 +143,14 @@ void menu_agent::on_mise_a_jour_clicked()
    {ui->tabreservation_2->setModel(tmpreservation.afficher());//refresh
    QMessageBox::information(nullptr, QObject::tr("Ajouter une reservation"),
                      QObject::tr("reservation updated.\n" "Click Cancel to exit."), QMessageBox::Cancel);
+    A.write_to_arduino("1"); //envoyer 1 à arduino
+
 
    }
      else
          QMessageBox::critical(nullptr, QObject::tr("Ajouter une reservation"),
                      QObject::tr("Erreur !.\n" "Click Cancel to exit."), QMessageBox::Cancel);
+      A.write_to_arduino("0"); //envoyer 1 à arduino
 
 
 }
@@ -293,7 +302,9 @@ void menu_agent::on_pushButton_4_clicked()
          QMessageBox::information(nullptr, QObject::tr("modifier un client"),
                            QObject::tr(" client modifié .\n"
                                        "Click Cancel to exit."), QMessageBox::Cancel);
+         A.write_to_arduino("1"); //envoyer 0 à arduino
         }
+     else { A.write_to_arduino("0");} //envoyer 1 à arduino
 }
 
 
@@ -361,7 +372,7 @@ void menu_agent::shootscreen()
     //capture the screen shot
         QScreen *screen= QGuiApplication::primaryScreen();
         QPixmap map =screen->grabWindow(0);
-        bool result =map.save("C:/Users/ASUS/Desktop/test.jpg","JPG");
+        bool result =map.save("C:/Users/NOUR/Desktop/test.jpg","JPG");
 }
 
 void menu_agent::on_pushButton_17_clicked()
