@@ -197,7 +197,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab_gerer_depense">
     <attribute name="title">
@@ -276,7 +276,7 @@ background-color: rgb(255, 250, 238);</string>
         <string notr="true">border-image: url(:/new/logo.png);</string>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>50</x>
@@ -344,15 +344,8 @@ background-color: rgb(255, 250, 238);</string>
         </item>
        </layout>
       </widget>
+      <zorder>layoutWidget</zorder>
       <zorder>graphicsView_4</zorder>
-      <zorder>label</zorder>
-      <zorder>label_2</zorder>
-      <zorder>label_3</zorder>
-      <zorder>label_4</zorder>
-      <zorder>lineEdit_ajout_id_dep</zorder>
-      <zorder>lineEdit_ajout_type_dep</zorder>
-      <zorder>lineEdit_ajout_tva</zorder>
-      <zorder>lineEdit_ajout_montant_dep</zorder>
       <zorder>pushButton_ajou_dep</zorder>
       <zorder>graphicsView_3</zorder>
       <zorder>graphicsView_19</zorder>
@@ -889,12 +882,26 @@ background-color: rgb(255, 250, 238);</string>
         <string notr="true">border-image: url(:/new/logo.png);</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="pushButton_imprimer">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>610</y>
+         <width>93</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>imprimer</string>
+       </property>
+      </widget>
       <zorder>graphicsView_10</zorder>
       <zorder>tableView_modif_rev</zorder>
       <zorder>layoutWidget_3</zorder>
       <zorder>pushButton_supp_rev</zorder>
       <zorder>pushButton_modif_rev</zorder>
       <zorder>graphicsView_11</zorder>
+      <zorder>pushButton_imprimer</zorder>
      </widget>
     </widget>
    </widget>
@@ -962,7 +969,7 @@ background-color: rgb(255, 250, 238);</string>
         <string notr="true">border-image: url(:/new/logo.png);</string>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>60</x>
@@ -1072,21 +1079,8 @@ background-color: rgb(255, 250, 238);</string>
         </item>
        </layout>
       </widget>
+      <zorder>layoutWidget</zorder>
       <zorder>graphicsView_13</zorder>
-      <zorder>label_17</zorder>
-      <zorder>label_18</zorder>
-      <zorder>label_19</zorder>
-      <zorder>label_20</zorder>
-      <zorder>label_21</zorder>
-      <zorder>label_22</zorder>
-      <zorder>label_23</zorder>
-      <zorder>lineEdit_ajout_id_sal</zorder>
-      <zorder>dateEdit_ajout_vers</zorder>
-      <zorder>lineEdit_ajout_montant_sal</zorder>
-      <zorder>lineEdit_ajout_nomperso_sal</zorder>
-      <zorder>lineEdit_ajout_sanc</zorder>
-      <zorder>lineEdit_ajout_promo</zorder>
-      <zorder>dateEdit_ajout_modif</zorder>
       <zorder>pushButton_ajout_sal</zorder>
       <zorder>graphicsView_14</zorder>
      </widget>

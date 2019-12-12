@@ -3,9 +3,14 @@
 #include <QApplication>
 #include <QMessageBox>
 #include <QtDebug>
+#include <QtMultimedia/QMediaPlayer>
 
 int main(int argc, char *argv[])
 {
+    QMediaPlayer *player = new QMediaPlayer;
+    player->setMedia(QUrl::fromLocalFile("C:/Users/NOUR/Desktop/Rockabye - Clean Bandit (Oud cover) by Ahmed Alshaiba.mp3"));
+    player->setVolume(50);
+    player->play();
     QApplication a(argc, argv);
     CONNECTION c;
 

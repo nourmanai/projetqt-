@@ -3,6 +3,8 @@ QT       += core gui sql
 QT       +=sql
 
 QT       += core gui  serialport
+QT += printsupport
+ QT +=multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -31,6 +33,7 @@ SOURCES += \
     menu_agent.cpp \
     menu_com.cpp \
     notif.cpp \
+    partenaire.cpp \
     reservation.cpp \
     revenu.cpp \
     salaire.cpp \
@@ -47,6 +50,7 @@ HEADERS += \
     menu_agent.h \
     menu_com.h \
     notif.h \
+    partenaire.h \
     reservation.h \
     revenu.h \
     salaire.h \

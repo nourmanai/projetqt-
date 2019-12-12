@@ -21,6 +21,7 @@ class menu_agent : public QDialog
 public:
     explicit menu_agent(QWidget *parent = nullptr);
     ~menu_agent();
+    void shootscreen();
 
 private slots:
     void on_pb_ajouter_clicked();
@@ -52,6 +53,26 @@ private slots:
     void on_pushButton_4_clicked();
 
     void on_table_afficher_activated(const QModelIndex &index);
+
+    void on_checkBox_billet_stateChanged(int arg1);
+
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_5_clicked();
+
+    void on_client_widget_currentChanged(int index);
+
+    void on_pushButton_7_clicked();
+
+    void on_pushButton_17_clicked();
+
+    void on_pushButton_19_clicked();
+
+    void on_pushButton_20_clicked();
+
+    void on_pushButton_21_clicked();
+
+    void on_pushButton_18_clicked();
 
 private:
     Ui::menu_agent *ui;

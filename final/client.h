@@ -27,7 +27,7 @@ public:
       bool supprimer_client(int idd);
        bool modifier(int,QString,QString,QString,QString,int,int);
        QSqlQueryModel *tri();
-        QSqlQueryModel *recherchernomclient(QString );
+        QSqlQueryModel *recherchernomclient(int);
 private:
     QString nom,prenom,adress,email;
     int id,tel,idreserv;

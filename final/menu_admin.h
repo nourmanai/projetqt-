@@ -18,6 +18,7 @@ class menu_admin : public QDialog
 public:
     explicit menu_admin(QWidget *parent = nullptr);
     ~menu_admin();
+    void imprimer ();
 
 private slots:
     void on_pushButton_ajou_dep_clicked();
@@ -63,6 +64,8 @@ private slots:
     void on_pushButton_insta2_clicked();
 
     void on_pushButton_lkn2_clicked();
+
+    void on_pushButton_imprimer_clicked();
 
 private:
     Ui::menu_admin *ui;

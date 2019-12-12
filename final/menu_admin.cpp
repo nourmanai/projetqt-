@@ -9,6 +9,10 @@
 #include "revenu.h"
 #include "arduino.h"
 #include "notif.h"
+#include <QTextDocument>
+#include <QPrinter>
+#include <QPrintDialog>
+
 menu_admin::menu_admin(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::menu_admin)
@@ -428,23 +432,78 @@ void menu_admin::on_pushButton_supp_sal_clicked()
 void menu_admin::on_pushButton_mail_clicked()
 {
     QString link="https://mail.google.com/mail/u/0/#inbox";
-   // QDesktopServices::openUrl(QUrl(link));
+    QDesktopServices::openUrl(QUrl(link));
 }
 
 void menu_admin::on_pushButton_fb2_clicked()
 {
     QString link="https://www.facebook.com/";
-    //QDesktopServices::openUrl(QUrl(link));
+    QDesktopServices::openUrl(QUrl(link));
 }
 
 void menu_admin::on_pushButton_insta2_clicked()
 {
     QString link="https://www.instagram.com/";
-   // QDesktopServices::openUrl(QUrl(link));
+    QDesktopServices::openUrl(QUrl(link));
 }
 
 void menu_admin::on_pushButton_lkn2_clicked()
 {
     QString link="https://www.linkedin.com/";
-   // QDesktopServices::openUrl(QUrl(link));
+    QDesktopServices::openUrl(QUrl(link));
+}
+void  menu_admin::imprimer ()
+{
+    QString strStream;
+                QTextStream out(&strStream);
+
+                const int rowCount =ui->tableView_modif_rev->model()->rowCount();
+                const int columnCount = ui->tableView_modif_rev->model()->columnCount();
+                QString TT = QDate::currentDate().toString("yyyy/MM/dd");
+                out <<"<html>\n"
+                      "<head>\n"
+                       "<meta Content=\"Text/html; charset=Windows-1251\">\n"
+                    << "<title>ERP - COMmANDE LIST<title>\n "
+                    << "</head>\n"
+                    "<body bgcolor=#ffffff link=#5000A0>\n"
+                    "<h1 style=\"text-align: center;\"><strong> ***LISTE DES agences *** "+TT+"</strong></h1>"
+                    "<table style=\"text-align: center; font-size: 20px;\" border=1>\n "
+                      "</br> </br>";
+                // headers
+                out << "<thead><tr bgcolor=#d6e5ff>";
+                for (int column = 0; column < columnCount; column++)
+                    if (!ui->tableView_modif_rev->isColumnHidden(column))
+                        out << QString("<th>%1</th>").arg(ui->tableView_modif_rev->model()->headerData(column, Qt::Horizontal).toString());
+                out << "</tr></thead>\n";
+
+                // data table
+                for (int row = 0; row < rowCount; row++) {
+                    out << "<tr>";
+                    for (int column = 0; column < columnCount; column++) {
+                        if (!ui->tableView_modif_rev->isColumnHidden(column)) {
+                            QString data =ui->tableView_modif_rev->model()->data(ui->tableView_modif_rev->model()->index(row, column)).toString().simplified();
+                            out << QString("<td bkcolor=0>%1</td>").arg((!data.isEmpty()) ? data : QString("&nbsp;"));
+                        }
+                    }
+                    out << "</tr>\n";
+                }
+                out <<  "</table>\n"
+                    "</body>\n"
+                    "</html>\n";
+
+                QTextDocument *document = new QTextDocument();
+                document->setHtml(strStream);
+
+                QPrinter printer;
+
+                QPrintDialog *baba = new QPrintDialog(&printer, NULL);
+                if (baba->exec() == QDialog::Accepted) {
+                    document->print(&printer);
+                }
+
+                delete document;
+}
+void menu_admin::on_pushButton_imprimer_clicked()
+{
+    imprimer();
 }

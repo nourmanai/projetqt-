@@ -9,7 +9,14 @@
 #include "billet.h"
 #include "client.h"
 #include<QPixmap>
+#include <QDesktopServices>
+#include <QPrinter>
+#include <QPrintDialog>
 #include <QtMultimedia/QMediaPlayer>
+#include <QTextDocument>
+#include <QScreen>
+#include<QTimer>
+#include <QSqlQueryModel>
 
 
 
@@ -23,12 +30,12 @@ menu_agent::menu_agent(QWidget *parent) :
     //QMediaPlayer *player = new QMediaPlayer;
    /* player->setMedia(QUrl::fromLocalFile("C:/Users/admin/Downloads/Rockabye - Clean Bandit (Oud cover) by Ahmed Alshaiba.mp3"));
     player->setVolume(50);
-    player->play();
+    player->play();*/
     ui->frame_hotel->setDisabled(1);
-   // ui->tabWidget_2->hide();
+    ui->tabWidget_4->hide();
     ui->frame_billet->setDisabled(1);
     ui->frame_guide->setDisabled(1);
-    QPixmap pix("C:/Users/admin/Desktop/the hive/start.png");
+    /*QPixmap pix("C:/Users/admin/Desktop/the hive/start.png");
     ui->label_pic->setPixmap(pix);
     QPixmap pix1("C:/Users/admin/Desktop/hot.png");
     ui->label_hotel->setPixmap(pix1);
@@ -45,7 +52,7 @@ menu_agent::~menu_agent()
 {
     delete ui;
 }
-//******************************* ELYES**************************************
+//******************************* ESAYED IL MASSOUSSI**************************************
 
 void menu_agent::on_pb_ajouter_clicked()
 {
@@ -74,7 +81,7 @@ void menu_agent::on_pb_ajouter_clicked()
      if( test1 && test)
    {
          ui->tabreservation_2->setModel(tmpreservation.afficher());//refresh
-   QMessageBox::information(nullptr, QObject::tr("Ajouter un e reservation"),
+   QMessageBox::information(nullptr, QObject::tr("Ajouter une reservation"),
                      QObject::tr("reservation ajouté.\n" "Click Cancel to exit."), QMessageBox::Cancel);
 
    }
@@ -92,7 +99,7 @@ void menu_agent::on_pb_supprimer_clicked()
     bool test=tmpreservation.supprimer(id);
 
     bool test1=tmpbillet.supprimer(num);
-    if( test1)
+    if( test&&test1)
     {
 
         ui->tabbillet->setModel(tmpbillet.afficher()) ;
@@ -143,12 +150,10 @@ void menu_agent::on_mise_a_jour_clicked()
 void menu_agent::on_afficher_clicked()
 {
     ui->tabbillet->setModel(tmpbillet.afficher());
-    //***********************************************************************************lyes************************//
-
-     // ui->tabWidget_2->show();
+    ui->tabWidget_4->show();
     //  ui->tabreserversation_3->hide();
       ui->tabreservation_2->show();
-        ui->tabreservation_2->setModel(tmpreservation.afficher());
+      ui->tabreservation_2->setModel(tmpreservation.afficher());
 }
 
 void menu_agent::on_checkBox_guide_toggled(bool checked)
@@ -177,6 +182,8 @@ void menu_agent::on_rechercher_clicked()
     int id = ui->lineEdit_id->text().toInt();
         // ui->tabreservation_2->hide();
          //ui->tabreserversation_3->show();
+    ui->tabreservation_2->show();
+
           ui->tabreservation_2->setModel(tmpreservation.rechercher(id));//refresh
 
 }
@@ -313,3 +320,118 @@ void menu_agent::on_table_afficher_activated(const QModelIndex &index)
 
 //transport
 
+
+void menu_agent::on_checkBox_billet_stateChanged(int arg1)
+{
+
+}
+
+void menu_agent::on_pushButton_3_clicked()
+{
+    int id = ui->lineEdit_9->text().toInt();
+         ui->tableView_4->setModel(c.recherchernomclient(id));
+}
+
+void menu_agent::on_pushButton_5_clicked()
+{
+
+}
+
+void menu_agent::on_client_widget_currentChanged(int index)
+{
+
+    int id2 = ui->lineEdit_32->text().toInt();
+     int numtaxi = ui->lineEdit_30->text().toInt();
+      int numchauffeure= ui->lineEdit_29->text().toInt();
+    QString pointdepart= ui->lineEdit_13->text();
+    QString pointarriv= ui->lineEdit_34->text();
+     QString datedepart= ui->lineEdit_33->text();
+     QString heureudepart= ui->lineEdit_31->text();
+  Transport T(id2,pointdepart,pointarriv,datedepart,heureudepart,numtaxi,numchauffeure);
+
+
+}
+
+void menu_agent::on_pushButton_7_clicked()
+{
+      ui->table_afficher_2->setModel(T.afficher_Transport());
+}
+void menu_agent::shootscreen()
+{
+    //capture the screen shot
+        QScreen *screen= QGuiApplication::primaryScreen();
+        QPixmap map =screen->grabWindow(0);
+        bool result =map.save("C:/Users/ASUS/Desktop/test.jpg","JPG");
+}
+
+void menu_agent::on_pushButton_17_clicked()
+{
+   QTimer::singleShot(500,this,& menu_agent::shootscreen);
+}
+
+void menu_agent::on_pushButton_19_clicked()
+{
+    ui->table_afficher_2->setModel(T.tri());
+
+}
+
+void menu_agent::on_pushButton_20_clicked()
+{
+    int id2 = ui->lineEdit_11->text().toInt();
+       bool test=T.supprimer_Transport(id2);
+       if(test)
+       { ui->table_afficher_2->setModel(T.afficher_Transport());
+           ui->tableView_5->setModel(T.afficher_Transport());
+
+
+           QMessageBox::information(nullptr, QObject::tr("Supprimer transport"),
+                       QObject::tr("transport supprime.\n"
+                                   "Click Cancel to exit."), QMessageBox::Cancel);
+
+       }
+       else
+           QMessageBox::critical(nullptr, QObject::tr("Supprimer transport"),
+                       QObject::tr("Erreur !.\n"
+                                   "Click Cancel to exit."), QMessageBox::Cancel);
+}
+
+void menu_agent::on_pushButton_21_clicked()
+{
+
+             int id2 = ui->lineEdit_8->text().toInt();
+                  ui->tableView_5->setModel(T.rechercherid2(id2));
+
+}
+
+void menu_agent::on_pushButton_18_clicked()
+{
+    int id2 = ui->lineEdit_32->text().toInt();
+         int numtaxi = ui->lineEdit_30->text().toInt();
+          int numchauffeure= ui->lineEdit_29->text().toInt();
+        QString pointdepart= ui->lineEdit_13->text();
+        QString pointarriv= ui->lineEdit_34->text();
+         QString datedepart= ui->lineEdit_33->text();
+         QString heureudepart= ui->lineEdit_31->text();
+      Transport T(id2,pointdepart,pointarriv,datedepart,heureudepart,numtaxi,numchauffeure);
+
+     if(ui->lineEdit_32->text().isEmpty() || ui->lineEdit_30->text().isEmpty() || ui->lineEdit_29->text().isEmpty() || ui->lineEdit_13->text().isEmpty() || ui->lineEdit_34->text().isEmpty() || ui->lineEdit_33->text().isEmpty() || ui->lineEdit_31->text().isEmpty())
+     {
+
+             QMessageBox::warning(nullptr, QObject::tr("Ajouter transport"),
+                               QObject::tr("veuillez remplir tous les champs.\n"
+                                           "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+
+
+     } else
+     {
+      bool test=T.ajoutercTransport();
+      if(test)
+    {
+        ui->table_afficher_2->setModel(T.afficher_Transport());//refresh
+    QMessageBox::information(nullptr, QObject::tr("Ajouter transport "),
+                      QObject::tr("Transport ajouté.\n"
+                                  "Click Cancel to exit."), QMessageBox::Cancel);
+      } }
+}

@@ -32,10 +32,23 @@
     <widget class="QGraphicsView" name="graphicsView">
      <property name="geometry">
       <rect>
-       <x>-10</x>
+       <x>0</x>
        <y>0</y>
        <width>961</width>
-       <height>571</height>
+       <height>581</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 250, 238);</string>
+     </property>
+    </widget>
+    <widget class="QTableView" name="tableView_offre_com">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>841</width>
+       <height>511</height>
       </rect>
      </property>
     </widget>
@@ -100,12 +113,13 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>630</x>
        <y>90</y>
-       <width>131</width>
+       <width>171</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+      <string notr="true">font: 10pt &quot;MS Shell Dlg 2&quot;;
+border-image: url(:/new/logout.png);</string>
      </property>
      <property name="text">
       <string>Envoyer</string>
@@ -127,21 +141,30 @@ p, li { white-space: pre-wrap; }
       <string>Envoyer</string>
      </property>
     </widget>
+    <widget class="QGraphicsView" name="graphicsView_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1281</width>
+       <height>931</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 250, 238);</string>
+     </property>
+    </widget>
+    <zorder>graphicsView_3</zorder>
+    <zorder>textEdit_a</zorder>
+    <zorder>textEdit_obj_2</zorder>
+    <zorder>textEdit_cont_2</zorder>
+    <zorder>pushButton_envoi</zorder>
+    <zorder>pushButton_3</zorder>
    </widget>
    <widget class="QWidget" name="tab_media">
     <attribute name="title">
      <string>social media </string>
     </attribute>
-    <widget class="QGraphicsView" name="graphicsView_2">
-     <property name="geometry">
-      <rect>
-       <x>-10</x>
-       <y>0</y>
-       <width>961</width>
-       <height>571</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
@@ -150,6 +173,9 @@ p, li { white-space: pre-wrap; }
        <width>201</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/new/mail.png);</string>
      </property>
      <property name="text">
       <string>Mail</string>
@@ -164,6 +190,9 @@ p, li { white-space: pre-wrap; }
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/new/fb.png);</string>
+     </property>
      <property name="text">
       <string>Facebook</string>
      </property>
@@ -176,6 +205,9 @@ p, li { white-space: pre-wrap; }
        <width>201</width>
        <height>41</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/new/insta.png);</string>
      </property>
      <property name="text">
       <string>Instagram</string>
@@ -190,10 +222,31 @@ p, li { white-space: pre-wrap; }
        <height>41</height>
       </rect>
      </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/new/linked.png);</string>
+     </property>
      <property name="text">
       <string>Linkedin</string>
      </property>
     </widget>
+    <widget class="QGraphicsView" name="graphicsView_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1281</width>
+       <height>931</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 250, 238);</string>
+     </property>
+    </widget>
+    <zorder>graphicsView_2</zorder>
+    <zorder>pushButton</zorder>
+    <zorder>pushButton_fb</zorder>
+    <zorder>pushButton_insta</zorder>
+    <zorder>pushButton_lkn</zorder>
    </widget>
   </widget>
  </widget>

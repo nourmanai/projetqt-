@@ -42,7 +42,7 @@ QString res4=QString::number(id_offre);
 QString res5=QString::number(num_billet);
 
 
-query.prepare("insert into RESERVATION (ID_RESERV,MODE_PAIEMENT,DESTINATION,ID_HOTEL,NUM_BILLET,ID_OFFRE,ID_GUIDE,DATER,ID_CLIENT) values (:ID,:MODE_PAIEMENT,:DESTINATION,:ID_HOTEL,:NUM_BILLET,:ID_OFFRE,:ID_GUIDE,:DATER,:ID_CLIENT)");
+query.prepare("insert into RESERVATION (ID,MODE_PAIEMENT,DESTINATION,ID_HOTEL,NUM_BILLET,ID_OFFRE,ID_GUIDE,DATER,ID_CLIENT) values (:ID,:MODE_PAIEMENT,:DESTINATION,:ID_HOTEL,:NUM_BILLET,:ID_OFFRE,:ID_GUIDE,:DATER,:ID_CLIENT)");
 query.bindValue(":ID", res);
 query.bindValue(":MODE_PAIEMENT", mode_paiement);
 query.bindValue(":DESTINATION", destination);
@@ -60,7 +60,7 @@ QSqlQueryModel * reservation::afficher()
 {QSqlQueryModel * model= new QSqlQueryModel();
 
 model->setQuery("select * from RESERVATION");
-model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_RESERV"));
+model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
 model->setHeaderData(1, Qt::Horizontal, QObject::tr("DESTINATION"));
 model->setHeaderData(2, Qt::Horizontal, QObject::tr("MODE_PAIEMENT"));
 model->setHeaderData(3, Qt::Horizontal, QObject::tr("ID_HOTEL"));
@@ -78,8 +78,8 @@ QSqlQueryModel* reservation::rechercher(int id)
     QString res= QString::number(id);
 
 
-    model->setQuery("select * from RESERVATION where ID_RESERV  ='"+res+"'");
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_RESERV"));
+    model->setQuery("select * from RESERVATION where ID='"+res+"'");
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("DESTINATION"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("MODE_PAIEMENT"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("ID_HOTEL"));
@@ -98,7 +98,7 @@ bool reservation::supprimer(int id)
 {
 QSqlQuery query;
 QString res= QString::number(id);
-query.prepare("Delete from RESERVATION where ID_RESERV = :ID ");
+query.prepare("Delete from RESERVATION where ID=:ID ");
 query.bindValue(":ID", res);
 return    query.exec();
 }
@@ -112,7 +112,7 @@ QString res2=QString::number(id_guide);
 QString res3=QString::number(id_hotel);
 QString res4=QString::number(id_offre);
 QString res5=QString::number(num_billet);
-query.prepare("Update RESERVATION set MODE_PAIEMENT=:MODE_PAIEMENT,DESTINATION=:DESTINATION,ID_HOTEL=:ID_HOTEL,NUM_BILLET=:NUM_BILLET,ID_OFFRE=:ID_OFFRE,ID_GUIDE=:ID_GUIDE,DATER=:DATER,ID_CLIENT=:ID_CLIENT where ID_RESERV=:ID");
+query.prepare("Update RESERVATION set MODE_PAIEMENT=:MODE_PAIEMENT,DESTINATION=:DESTINATION,ID_HOTEL=:ID_HOTEL,NUM_BILLET=:NUM_BILLET,ID_OFFRE=:ID_OFFRE,ID_GUIDE=:ID_GUIDE,DATER=:DATER,ID_CLIENT=:ID_CLIENT where ID=:ID");
 query.bindValue(":ID", res);
 query.bindValue(":MODE_PAIEMENT", mode_paiement);
 query.bindValue(":DESTINATION", destination);
@@ -127,9 +127,9 @@ return    query.exec();
 }
 QSqlQueryModel * reservation::tri_affiche()
 { QSqlQueryModel * model= new QSqlQueryModel();
-    model->setQuery("select * from RESERVATION ORDER BY ID_RESERV ");
+    model->setQuery("select * from RESERVATION ORDER BY ID");
 
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID_RESERV"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID"));
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("DESTINATION"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("MODE_PAIEMENT"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("ID_HOTEL"));
