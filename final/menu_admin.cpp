@@ -241,12 +241,14 @@ void menu_admin::on_pushButton_modif_dep_clicked()
            QMessageBox msgBox ;
                    msgBox.setText("la Depense a ete modifiee ");
                    msgBox.exec();
+                   A.write_to_arduino("1"); //envoyer 0 à arduino
 
        }
        else {
            QMessageBox msgBox ;
                    msgBox.setText("la Depense n'est pas modifiee");
                    msgBox.exec();
+                   A.write_to_arduino("0"); //envoyer 0 à arduino
 
        }
 }
@@ -314,12 +316,14 @@ void menu_admin::on_pushButton_modif_rev_clicked()
            QMessageBox msgBox ;
                    msgBox.setText("la revenu a ete modifiee ");
                    msgBox.exec();
+                   A.write_to_arduino("1"); //envoyer 0 à arduino
 
        }
        else {
            QMessageBox msgBox ;
                    msgBox.setText("la revenu n'est pas modifiee");
                    msgBox.exec();
+                   A.write_to_arduino("0"); //envoyer 0 à arduino
 
        }
 }
@@ -395,12 +399,14 @@ void menu_admin::on_pushButton_modif_sal_clicked()
           QMessageBox msgBox ;
                   msgBox.setText("lE SALAIRE a ete modifiee ");
                   msgBox.exec();
+                  A.write_to_arduino("1"); //envoyer 1 à arduino
 
       }
       else {
           QMessageBox msgBox ;
                   msgBox.setText("lE SALAIRE n'est pas modifiee");
                   msgBox.exec();
+                  A.write_to_arduino("0"); //envoyer 0 à arduino
 
       }
 }
@@ -507,3 +513,10 @@ void menu_admin::on_pushButton_imprimer_clicked()
 {
     imprimer();
 }
+void menu_admin::update_label()
+{
+    data=A.read_from_arduino();
+
+}
+
+

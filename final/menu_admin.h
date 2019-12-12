@@ -19,6 +19,7 @@ public:
     explicit menu_admin(QWidget *parent = nullptr);
     ~menu_admin();
     void imprimer ();
+    void update_label();
 
 private slots:
     void on_pushButton_ajou_dep_clicked();

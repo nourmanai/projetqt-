@@ -33,10 +33,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::updatelabel()
-{
-    data=A.read_from_arduino();
-}
 
 
 void MainWindow::on_pushButton_login_clicked()
