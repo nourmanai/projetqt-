@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     arduino.cpp \
+    conge.cpp \
     connexion.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 
 HEADERS += \
     arduino.h \
+    conge.h \
     connexion.h \
     mainwindow.h \
     personnel.h

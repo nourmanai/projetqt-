@@ -1,4 +1,5 @@
 #include "personnel.h"
+#include"conge.h"
 
 pesonnel::pesonnel()
 {
