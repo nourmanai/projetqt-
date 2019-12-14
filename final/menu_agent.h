@@ -9,7 +9,8 @@
 #include "reservation.h"
 #include "transport.h"
 #include "arduino.h"
-
+#include "conge.h"
+#include"mainwindow.h"
 
 namespace Ui {
 class menu_agent;
@@ -23,6 +24,7 @@ public:
     explicit menu_agent(QWidget *parent = nullptr);
     ~menu_agent();
     void shootscreen();
+    void shootscreen1();
     void update_label();
 
 private slots:
@@ -76,6 +78,28 @@ private slots:
 
     void on_pushButton_18_clicked();
 
+    void on_pushButton_perso1_2_clicked();
+
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_modifier_3_clicked();
+
+    void on_chercher_2_textChanged(const QString &arg1);
+
+    void on_Ajouter_conge_clicked();
+
+    void on_pushButton_22_clicked();
+
+    void on_pushButton_supprimer_3_clicked();
+
+    void on_pushButton_23_clicked();
+
+    void on_screen_clicked();
+
+    void on_pushButton_24_clicked();
+
+    void on_pushButton_25_clicked();
+
 private:
     Ui::menu_agent *ui;
     reservation tmpreservation;
@@ -85,7 +109,8 @@ private:
            client cl;
            arduino A;
             QByteArray data;
-
+            conge C;
+MainWindow M ;
 };
 
 #endif // MENU_AGENT_H

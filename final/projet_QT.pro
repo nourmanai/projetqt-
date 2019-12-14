@@ -5,7 +5,7 @@ QT       +=sql
 QT       += core gui  serialport
 QT += printsupport
  QT +=multimedia
-
+QT       += charts
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -25,6 +25,7 @@ SOURCES += \
     arduino.cpp \
     billet.cpp \
     client.cpp \
+    conge.cpp \
     connection.cpp \
     depenses.cpp \
     main.cpp \
@@ -34,15 +35,18 @@ SOURCES += \
     menu_com.cpp \
     notif.cpp \
     partenaire.cpp \
+    personnel.cpp \
     reservation.cpp \
     revenu.cpp \
     salaire.cpp \
+    stats.cpp \
     transport.cpp
 
 HEADERS += \
     arduino.h \
     billet.h \
     client.h \
+    conge.h \
     connection.h \
     depenses.h \
     mainwindow.h \
@@ -51,9 +55,11 @@ HEADERS += \
     menu_com.h \
     notif.h \
     partenaire.h \
+    personnel.h \
     reservation.h \
     revenu.h \
     salaire.h \
+    stats.h \
     transport.h
 
 FORMS += \

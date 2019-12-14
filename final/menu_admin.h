@@ -20,6 +20,7 @@ public:
     ~menu_admin();
     void imprimer ();
     void update_label();
+    int write_to_arduino( QByteArray d);
 
 private slots:
     void on_pushButton_ajou_dep_clicked();

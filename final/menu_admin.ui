@@ -197,7 +197,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_gerer_depense">
     <attribute name="title">
@@ -206,14 +206,14 @@
     <widget class="QTabWidget" name="tabWidget_3">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>-10</x>
        <y>0</y>
        <width>1011</width>
-       <height>681</height>
+       <height>701</height>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="tab_5">
       <attribute name="title">
@@ -344,8 +344,8 @@ background-color: rgb(255, 250, 238);</string>
         </item>
        </layout>
       </widget>
-      <zorder>layoutWidget</zorder>
       <zorder>graphicsView_4</zorder>
+      <zorder>layoutWidget</zorder>
       <zorder>pushButton_ajou_dep</zorder>
       <zorder>graphicsView_3</zorder>
       <zorder>graphicsView_19</zorder>
@@ -413,74 +413,6 @@ background-color: rgb(255, 250, 238);</string>
         </rect>
        </property>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>270</y>
-         <width>271</width>
-         <height>161</height>
-        </rect>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_5">
-          <item>
-           <widget class="QLabel" name="label_5">
-            <property name="text">
-             <string>id depense </string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_supp_dep"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item>
-           <widget class="QLabel" name="label_6">
-            <property name="text">
-             <string>type depense </string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_modif_type_dep"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
-          <item>
-           <widget class="QLabel" name="label_7">
-            <property name="text">
-             <string>taux tva</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_modif_tva"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item>
-           <widget class="QLabel" name="label_8">
-            <property name="text">
-             <string>montant</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_modif_montant_dep"/>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </widget>
       <widget class="QPushButton" name="pushButton_modif_dep">
        <property name="geometry">
         <rect>
@@ -516,20 +448,6 @@ border-image: url(:/new/supp2.png);</string>
         <string>    SUPRIMER</string>
        </property>
       </widget>
-      <widget class="QGraphicsView" name="graphicsView">
-       <property name="geometry">
-        <rect>
-         <x>-10</x>
-         <y>-20</y>
-         <width>1051</width>
-         <height>751</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">
-background-color: rgb(255, 250, 238);</string>
-       </property>
-      </widget>
       <widget class="QGraphicsView" name="graphicsView_2">
        <property name="geometry">
         <rect>
@@ -543,14 +461,148 @@ background-color: rgb(255, 250, 238);</string>
         <string notr="true">border-image: url(:/new/logo.png);</string>
        </property>
       </widget>
-      <zorder>graphicsView</zorder>
+      <widget class="QGraphicsView" name="graphicsView_20">
+       <property name="geometry">
+        <rect>
+         <x>-10</x>
+         <y>0</y>
+         <width>1051</width>
+         <height>751</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+background-color: rgb(255, 250, 238);</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_modif_type_dep">
+       <property name="geometry">
+        <rect>
+         <x>109</x>
+         <y>314</y>
+         <width>137</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>22</x>
+         <y>397</y>
+         <width>47</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>montant</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_modif_tva">
+       <property name="geometry">
+        <rect>
+         <x>74</x>
+         <y>355</y>
+         <width>137</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_modif_montant_dep">
+       <property name="geometry">
+        <rect>
+         <x>76</x>
+         <y>397</y>
+         <width>137</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>22</x>
+         <y>272</y>
+         <width>66</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>id depense </string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_supp_dep">
+       <property name="geometry">
+        <rect>
+         <x>95</x>
+         <y>272</y>
+         <width>137</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>22</x>
+         <y>355</y>
+         <width>45</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>taux tva</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>22</x>
+         <y>314</y>
+         <width>80</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>type depense </string>
+       </property>
+      </widget>
+      <zorder>graphicsView_20</zorder>
       <zorder>tableView_modif_dep</zorder>
       <zorder>layoutWidget</zorder>
       <zorder>pushButton_modif_dep</zorder>
       <zorder>pushButton_supp_dep</zorder>
       <zorder>graphicsView_2</zorder>
+      <zorder>lineEdit_modif_type_dep</zorder>
+      <zorder>label_8</zorder>
+      <zorder>lineEdit_modif_tva</zorder>
+      <zorder>lineEdit_modif_montant_dep</zorder>
+      <zorder>label_5</zorder>
+      <zorder>lineEdit_supp_dep</zorder>
+      <zorder>label_7</zorder>
+      <zorder>label_6</zorder>
      </widget>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>700</x>
+       <y>637</y>
+       <width>211</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/new/ajout.png);
+color: rgb(255, 255, 255);
+font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
+     </property>
+     <property name="text">
+      <string>LOGOUT</string>
+     </property>
+    </widget>
+    <zorder>pushButton</zorder>
+    <zorder>tabWidget_3</zorder>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">
@@ -919,7 +971,7 @@ background-color: rgb(255, 250, 238);</string>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_11">
       <attribute name="title">
@@ -969,120 +1021,185 @@ background-color: rgb(255, 250, 238);</string>
         <string notr="true">border-image: url(:/new/logo.png);</string>
        </property>
       </widget>
-      <widget class="QWidget" name="layoutWidget">
+      <widget class="QLabel" name="label_21">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>150</y>
-         <width>321</width>
-         <height>277</height>
+         <x>62</x>
+         <y>313</y>
+         <width>47</width>
+         <height>16</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_5">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_17">
-          <item>
-           <widget class="QLabel" name="label_17">
-            <property name="text">
-             <string>id salaire</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_ajout_id_sal"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_18">
-          <item>
-           <widget class="QLabel" name="label_18">
-            <property name="text">
-             <string>date versement</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QDateEdit" name="dateEdit_ajout_vers"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_19">
-          <item>
-           <widget class="QLabel" name="label_19">
-            <property name="text">
-             <string>montant</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_ajout_montant_sal"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_20">
-          <item>
-           <widget class="QLabel" name="label_20">
-            <property name="text">
-             <string>nom personnel</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_ajout_nomperso_sal"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_21">
-          <item>
-           <widget class="QLabel" name="label_21">
-            <property name="text">
-             <string>sanction</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_ajout_sanc"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_22">
-          <item>
-           <widget class="QLabel" name="label_22">
-            <property name="text">
-             <string>promotion</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineEdit_ajout_promo"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_23">
-          <item>
-           <widget class="QLabel" name="label_23">
-            <property name="text">
-             <string>date dernière modification </string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QDateEdit" name="dateEdit_ajout_modif"/>
-          </item>
-         </layout>
-        </item>
-       </layout>
+       <property name="text">
+        <string>sanction</string>
+       </property>
       </widget>
-      <zorder>layoutWidget</zorder>
+      <widget class="QLineEdit" name="lineEdit_ajout_sanc">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>310</y>
+         <width>137</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_ajout_promo">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>350</y>
+         <width>137</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_ajout_id_sal">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>160</y>
+         <width>137</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>152</y>
+         <width>52</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>id salaire</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>233</y>
+         <width>47</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>montant</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>273</y>
+         <width>85</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>nom personnel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>192</y>
+         <width>89</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>date versement</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_ajout_montant_sal">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>220</y>
+         <width>137</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_ajout_nomperso_sal">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>270</y>
+         <width>137</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_23">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>394</y>
+         <width>154</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>date dernière modification </string>
+       </property>
+      </widget>
+      <widget class="QDateEdit" name="dateEdit_ajout_vers">
+       <property name="geometry">
+        <rect>
+         <x>158</x>
+         <y>192</y>
+         <width>94</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QDateEdit" name="dateEdit_ajout_modif">
+       <property name="geometry">
+        <rect>
+         <x>223</x>
+         <y>394</y>
+         <width>94</width>
+         <height>22</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>62</x>
+         <y>353</y>
+         <width>58</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>promotion</string>
+       </property>
+      </widget>
       <zorder>graphicsView_13</zorder>
+      <zorder>layoutWidget</zorder>
       <zorder>pushButton_ajout_sal</zorder>
       <zorder>graphicsView_14</zorder>
+      <zorder>label_21</zorder>
+      <zorder>lineEdit_ajout_sanc</zorder>
+      <zorder>lineEdit_ajout_promo</zorder>
+      <zorder>lineEdit_ajout_id_sal</zorder>
+      <zorder>label_17</zorder>
+      <zorder>label_19</zorder>
+      <zorder>label_20</zorder>
+      <zorder>label_18</zorder>
+      <zorder>lineEdit_ajout_montant_sal</zorder>
+      <zorder>lineEdit_ajout_nomperso_sal</zorder>
+      <zorder>label_23</zorder>
+      <zorder>dateEdit_ajout_vers</zorder>
+      <zorder>dateEdit_ajout_modif</zorder>
+      <zorder>label_22</zorder>
      </widget>
      <widget class="QWidget" name="tab_12">
       <attribute name="title">
@@ -1320,6 +1437,9 @@ border-image: url(:/new/MODIF2.png);</string>
        <property name="styleSheet">
         <string notr="true">border-image: url(:/new/rech.png);</string>
        </property>
+       <property name="text">
+        <string>                      </string>
+       </property>
       </widget>
       <widget class="QGraphicsView" name="graphicsView_6">
        <property name="geometry">
@@ -1357,25 +1477,6 @@ background-color: rgb(255, 250, 238);</string>
       <zorder>lineEdit_cherch_perso</zorder>
       <zorder>graphicsView_6</zorder>
      </widget>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="tab_3">
-    <attribute name="title">
-     <string>bilan</string>
-    </attribute>
-    <widget class="QGraphicsView" name="graphicsView_16">
-     <property name="geometry">
-      <rect>
-       <x>-10</x>
-       <y>0</y>
-       <width>1051</width>
-       <height>751</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-background-color: rgb(255, 250, 238);</string>
-     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="tab_4">

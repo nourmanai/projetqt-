@@ -127,6 +127,7 @@ void menu_admin::on_pushButton_ajout_sal_clicked()
   QString okd="";
                        notif ok;
                        ok.notification_Ouverture(okd);
+                       write_to_arduino("3");
 
   }
     else
@@ -266,6 +267,7 @@ void menu_admin::on_pushButton_supp_dep_clicked()
          QString okd="";
                               notif ok;
                               ok.notification_sup_produit(okd);
+                              write_to_arduino("3");
 
      }
      else
@@ -342,6 +344,7 @@ void menu_admin::on_pushButton_supp_rev_clicked()
          QString okd="";
                               notif ok;
                               ok.notification_sup_produit(okd);
+                              write_to_arduino("3");
 
      }
      else
@@ -425,6 +428,7 @@ void menu_admin::on_pushButton_supp_sal_clicked()
          QString okd="";
                               notif ok;
                               ok.notification_sup_produit(okd);
+                              write_to_arduino("3");
 
      }
      else
@@ -518,5 +522,16 @@ void menu_admin::update_label()
     data=A.read_from_arduino();
 
 }
+int menu_admin::write_to_arduino( QByteArray d)
+{
+
+    //if(arduino->isWritable()){
+        A.write_to_arduino(d);  // envoyer des donnés vers Arduino
+  //  }else{
+  //      qDebug() << "Couldn't write to serial!";
+   // }
+}
+
+
 
 

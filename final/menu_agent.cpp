@@ -18,6 +18,14 @@
 #include <QScreen>
 #include<QTimer>
 #include <QSqlQueryModel>
+#include"conge.h"
+#include"personnel.h"
+#include "menu_com.h"
+#include "mainwindow.h"
+#include <QPieSeries>
+#include <QChart>
+#include <QChartView>
+
 
 
 
@@ -203,6 +211,19 @@ void menu_agent::on_trier_clicked()
     ui->tabreservation_2->setModel(tmpreservation.tri_affiche());//refresh
 
 }
+void menu_agent::shootscreen()
+{
+     //capture the screen shot
+     QScreen *screen = QGuiApplication::primaryScreen();
+
+     QPixmap map =screen->grabWindow(0);
+     bool result = map.save("C:/Users/NOUR/Desktop/test1.jpg", "JPG");
+}
+void menu_agent::on_screen_clicked()
+{
+    QTimer::singleShot(500, this, &menu_agent::shootscreen);
+}
+
 //***************************RANA**************************************
 
 //client
@@ -367,7 +388,7 @@ void menu_agent::on_pushButton_7_clicked()
 {
       ui->table_afficher_2->setModel(T.afficher_Transport());
 }
-void menu_agent::shootscreen()
+void menu_agent::shootscreen1()
 {
     //capture the screen shot
         QScreen *screen= QGuiApplication::primaryScreen();
@@ -445,4 +466,248 @@ void menu_agent::on_pushButton_18_clicked()
                       QObject::tr("Transport ajouté.\n"
                                   "Click Cancel to exit."), QMessageBox::Cancel);
       } }
+}
+
+
+//********************************************** nalouti*****************************************
+void menu_agent::on_pushButton_perso1_2_clicked()
+{
+    QString nom= ui->nom_perso_2->text();
+           QString prenom= ui->prenom_perso_2->text();
+     int ID= ui->id_perso_2->text().toInt();
+      int CIN= ui->cin_perso_2->text().toInt();
+      personnel p(CIN,ID,nom,prenom);
+      bool test=p.ajouter();
+    A.write_to_arduino("1");
+      if(test)
+      {  A.write_to_arduino("3");
+          QMessageBox::critical(nullptr,QObject::tr("Ajout avec succes"),
+                              QObject::tr("connection successful\n ""Click cancel to exite "),QMessageBox::Cancel);
+        //  Dialog D;
+         // D.exec();
+
+      }
+      else
+      { QMessageBox::critical(nullptr,QObject::tr("Ajout!!!!"),
+                              QObject::tr("noooo\n ""Click cancel to exite "),QMessageBox::Cancel);
+
+      }
+}
+
+void menu_agent::on_pushButton_8_clicked()
+{
+    QSqlQuery query;
+        ui->listWidget_2->clear();
+        query.exec("select * from PERSONNEL ORDER BY ID DESC");
+        while(query.next())
+        {
+
+         QString id=query.value(0).toString();
+         QString nom=query.value(1).toString();
+         QString prenom=query.value(2).toString();
+         QString cin=query.value(3).toString();
+         QString ch=id+"                                                   "+nom+"                                                   "+prenom+"                                                   "+cin;
+         ui->listWidget_2->addItem(ch);
+
+        }
+}
+
+void menu_agent::on_pushButton_modifier_3_clicked()
+{
+    QSqlQuery query;
+                QString cin = ui->cin_11->text();
+                QString nom=ui->nom_11->text();
+                QString prenom=ui->prenom_11->text();
+                query.prepare("update PERSONNEL set prenom=:prenom ,nom=:nom WHERE CIN =:cin");
+                query.bindValue(":prenom",prenom);
+                query.bindValue(":nom",nom);
+                query.bindValue(":cin",cin);
+
+                bool t=query.exec();
+                       if(t)
+                       {A.write_to_arduino("1");
+                       QMessageBox::information(nullptr, QObject::tr("Modifier"),
+                                       QObject::tr("personnel modifié.\n"
+                                                   "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+                       }
+                       else
+                          {A.write_to_arduino("0");
+                           QMessageBox::critical(nullptr, QObject::tr("Modifier"),
+                                       QObject::tr("Erreur !.\n"
+                                                   "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+}
+
+
+void menu_agent::on_chercher_2_textChanged(const QString &arg1)
+{
+    ui->listWidget_6->clear();
+            QSqlQuery query;
+            //query.prepare("SELECT * from PERSONNEL where CIN=:nombre");
+            query.prepare("SELECT * from PERSONNEL where substr(to_char(CIN),1,:size) like :nombre");
+            query.bindValue(":nombre",arg1);
+            query.bindValue(":size",arg1.size());
+            query.exec();
+            while(query.next())
+            {
+                QString id=query.value(0).toString();
+                QString nom=query.value(1).toString();
+                QString prenom=query.value(2).toString();
+                QString cin=query.value(3).toString();
+                QString ch=id+"                                              "+id+"                                              "+nom+"                                              "+prenom+"                      "+cin;
+                ui->listWidget_6->addItem(ch);
+
+            }
+}
+
+void menu_agent::on_Ajouter_conge_clicked()
+{
+    int id_conge= ui->cin_8->text().toInt();
+         int id_personnel= ui->id_personnel->text().toInt();
+           QString debut_conge= ui->debut_conge->text();
+           QString fin_conge= ui->fin_conge->text();
+
+
+      conge c(id_conge,debut_conge,fin_conge,id_personnel);
+      bool test=c.ajouter();
+    A.write_to_arduino("1");
+      if(test)
+      {  A.write_to_arduino("3");
+
+          ui->tableView->setModel(C.afficher());//refresh
+          QMessageBox::critical(nullptr,QObject::tr("Ajout avec succes"),
+                              QObject::tr("conge ajouté\n ""Click cancel to exite "),QMessageBox::Cancel);
+
+
+      }
+      else
+      { QMessageBox::critical(nullptr,QObject::tr("Ajout!!!!"),
+                              QObject::tr("noooo\n ""Click cancel to exite "),QMessageBox::Cancel);
+
+      }
+
+}
+
+void menu_agent::on_pushButton_22_clicked()
+{
+    QSqlQuery query;
+            int val = ui->lineEdit_12->text().toInt();
+            int id=ui->lineEdit_10->text().toInt();
+                QString debut=ui->lineEdit_14->text();
+                QString fin=ui->lineEdit_35->text();
+                C.modifier(id,debut,fin,val);
+
+                       if(query.exec())
+                       {A.write_to_arduino("1");
+                            ui->tableView->setModel(C.afficher());//refresh
+                       QMessageBox::information(nullptr, QObject::tr("Modifier"),
+                                       QObject::tr("personnel modifié.\n"
+                                                   "Click Cancel to exit."), QMessageBox::Cancel);
+
+
+                       }
+                       else
+                          {A.write_to_arduino("0");
+                           QMessageBox::critical(nullptr, QObject::tr("Modifier"),
+                                       QObject::tr("Erreur !.\n"
+                                                   "Click Cancel to exit."), QMessageBox::Cancel);
+    }
+}
+
+void menu_agent::on_pushButton_supprimer_3_clicked()
+{
+    {
+
+            int cin = ui->lineEdit_8->text().toInt();
+                QSqlQuery query;
+                query.prepare("delete from PERSONNEL where CIN= :nombre");
+                query.bindValue(":nombre",cin);
+                bool v=query.exec();
+                A.write_to_arduino("0");
+                if(v)
+                {
+
+                        ui->listWidget_2->clear();
+
+                        while(query.next())
+                        {
+
+                         QString id=query.value(0).toString();
+                         QString nom=query.value(1).toString();
+                         QString prenom=query.value(2).toString();
+                         QString cin=query.value(3).toString();
+                         QString ch =id+"                                               "+nom+"                                               "+prenom+"                                              "+cin;
+                         ui->listWidget_2->addItem(ch);
+
+                        }
+                QMessageBox::information(nullptr, QObject::tr("Supprimer un personnel"),
+                                QObject::tr("pe"
+                                            "PErsonnel supprimé.\n"
+                                            "Click Cancel to exitS."), QMessageBox::Cancel);
+
+                }
+                else{
+                    QMessageBox::critical(nullptr, QObject::tr("personnel n'existe pas !"),
+                                QObject::tr("Erreur !.\n"
+                                            "Click Cancel to exit."), QMessageBox::Cancel);
+        }
+        }
+}
+
+void menu_agent::on_pushButton_23_clicked()
+{
+     QSqlQuery query;
+   ui->listWidget_2->clear();
+   QString id=query.value(1).toString();
+       QString nom=query.value(0).toString();
+       QString prenom=query.value(2).toString();
+       QString cin=query.value(3).toString();
+
+   QString ch=nom+"                                                   "+id+"                                                   "+prenom+"                                                   "+cin;
+       ui->listWidget_2->addItem(ch);
+
+}
+
+
+
+void menu_agent::on_pushButton_24_clicked()
+{
+   // MainWindow MainWindow;
+   // this->hide();
+    /*this->hide();
+   menu_com menu;
+  menu.setModal(true);
+
+   menu.exec(); */
+
+}
+
+void menu_agent::on_pushButton_25_clicked()
+{
+  /*  QPieSeries * series = new QPieSeries() ;
+ int on= 0 ;
+ int off = 0 ;
+    QSqlQuery query;
+               query.prepare("select * from PERSONNEL ");
+               query.exec();
+               while(query.next())
+               {
+                   if  ((query.value(0).toInt())>100 ) { on++ ; }
+                   if  ((query.value(0).toInt())<100 ) { off++ ; }
+
+               }
+               series->append("ID > 100 ",on);
+
+               series->append("ID < 100",off);
+               series->setLabelsVisible();
+
+
+      QChart *chart = new QChart();
+      chart->addSeries(series);
+      chart->setTitle("ID");
+      QChartView *chartView = new QChartView(chart);
+      chartView->setRenderHint(QPainter::Antialiasing);
+      ui->horizontalLayout->addWidget(chartView);*/
 }
