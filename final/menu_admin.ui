@@ -263,19 +263,6 @@ background-color: rgb(255, 250, 238);</string>
         <string notr="true">border-image: url(:/new/logo.png);</string>
        </property>
       </widget>
-      <widget class="QGraphicsView" name="graphicsView_19">
-       <property name="geometry">
-        <rect>
-         <x>700</x>
-         <y>280</y>
-         <width>511</width>
-         <height>501</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border-image: url(:/new/logo.png);</string>
-       </property>
-      </widget>
       <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
@@ -348,7 +335,6 @@ background-color: rgb(255, 250, 238);</string>
       <zorder>layoutWidget</zorder>
       <zorder>pushButton_ajou_dep</zorder>
       <zorder>graphicsView_3</zorder>
-      <zorder>graphicsView_19</zorder>
      </widget>
      <widget class="QWidget" name="tab_6">
       <attribute name="title">
@@ -569,7 +555,6 @@ background-color: rgb(255, 250, 238);</string>
       </widget>
       <zorder>graphicsView_20</zorder>
       <zorder>tableView_modif_dep</zorder>
-      <zorder>layoutWidget</zorder>
       <zorder>pushButton_modif_dep</zorder>
       <zorder>pushButton_supp_dep</zorder>
       <zorder>graphicsView_2</zorder>
@@ -618,7 +603,7 @@ font: 75 12pt &quot;MS Shell Dlg 2&quot;;</string>
       </rect>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_8">
       <attribute name="title">
@@ -1183,7 +1168,6 @@ background-color: rgb(255, 250, 238);</string>
        </property>
       </widget>
       <zorder>graphicsView_13</zorder>
-      <zorder>layoutWidget</zorder>
       <zorder>pushButton_ajout_sal</zorder>
       <zorder>graphicsView_14</zorder>
       <zorder>label_21</zorder>
@@ -1438,7 +1422,7 @@ border-image: url(:/new/MODIF2.png);</string>
         <string notr="true">border-image: url(:/new/rech.png);</string>
        </property>
        <property name="text">
-        <string>                      </string>
+        <string/>
        </property>
       </widget>
       <widget class="QGraphicsView" name="graphicsView_6">

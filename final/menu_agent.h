@@ -100,6 +100,30 @@ private slots:
 
     void on_pushButton_25_clicked();
 
+    void on_pushButton_13_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_11_clicked();
+
+    void on_pushButton_12_clicked();
+
+    void on_idContratsRechercher_textChanged(const QString &arg1);
+
+    void on_pushButton_14_clicked();
+
+    void on_pushButton_15_clicked();
+
+    void on_pushButton_16_clicked();
+
+    void on_pushButton_26_clicked();
+
+    void on_lineEdit_28_textChanged(const QString &arg1);
+
+    void on_pushButton_27_clicked();
+
+    void on_pushButton_9_clicked();
+
 private:
     Ui::menu_agent *ui;
     reservation tmpreservation;

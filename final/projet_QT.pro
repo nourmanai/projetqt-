@@ -27,6 +27,7 @@ SOURCES += \
     client.cpp \
     conge.cpp \
     connection.cpp \
+    contrat.cpp \
     depenses.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -48,6 +49,7 @@ HEADERS += \
     client.h \
     conge.h \
     connection.h \
+    contrat.h \
     depenses.h \
     mainwindow.h \
     menu_admin.h \
